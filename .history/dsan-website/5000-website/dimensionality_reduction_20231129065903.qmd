@@ -1,0 +1,2 @@
+Project Proposal:
+A brief proposal outlining your project’s objectives, dataset selection, and the tools or libraries you plan to use (e.g., Python, scikit-learn).

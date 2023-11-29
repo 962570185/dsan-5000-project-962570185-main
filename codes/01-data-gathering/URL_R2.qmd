@@ -1,0 +1,33 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+```{r}
+df <- read.csv("https://query.data.world/s/elm6ejzxetmmsn44xkfxuppbqqkqjz?dws=00000", header=TRUE, stringsAsFactors=FALSE);
+```
+
+```{r}
+write.csv(df, file = "../../data/00-raw-data/raw_data_r2.csv", row.names = FALSE)
+```
+
+```{r}
+
+anyNA(df)
+
+df <- df[complete.cases(df), ]
+
+
+df$Year <- as.integer(df$Year)
+df$Runtime <- as.integer(df$Runtime)
+df$Rating <- as.numeric(df$Rating)
+
+df <- unique(df)
+
+
+```
+
+```{r}
+write.csv(df, file = "../../data/01-modified-data/cleaned_data_r2.csv", row.names = FALSE)
+```

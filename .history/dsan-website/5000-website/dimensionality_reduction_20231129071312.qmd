@@ -1,0 +1,86 @@
+## Project Proposal:
+Project’s objectives
+Dataset selection
+Here I select the clean data for the movie data
+
+The tools or libraries you plan to use (e.g., Python, scikit-learn).
+The code will be implemented in Python. The library pandas and numpy will be used to read and process the data. The library scikit-learn will be used to implement the model.
+
+## Code Implementation:
+
+**Read file**
+```{python}
+import pandas as pd
+
+file_name = '../../data/others/IMDB_Top_250_Movies.csv'
+df=pd.read_csv(file_name)  
+print(df.shape)
+```
+
+```{python}
+df.head()
+```
+
+**Preprocess the data**
+```{python}
+#CONVERT FROM STRING LABELS TO INTEGERS 
+labels=[]; #y1=[]; y2=[]
+sentiment=[]
+for label in df["sentiment"]:
+    if label not in labels:
+        labels.append(label)
+        print("index =",len(labels)-1,": label =",label)
+    for i in range(0,len(labels)):
+        if(label==labels[i]):
+            sentiment.append(i)
+sentiment=np.array(sentiment)
+ 
+corpus=df["review"].to_list()
+print("number of text chunks = ",len(corpus))
+print(corpus[0:3])
+
+vectorizer=CountVectorizer(min_df=0.001)   
+Xs  =  vectorizer.fit_transform(corpus)   
+X=np.array(Xs.todense())
+maxs=np.max(X,axis=0)
+X=np.ceil(X/maxs)
+print(X)
+
+```
+
+
+**Dimensionality Reduction with PCA**
+1. Apply PCA to record dataset.
+```{python}
+from sklearn.decomposition import PCA
+
+pca_original = PCA()
+pca_original.fit(X)
+```
+
+2. Determine the optimal number of principal components to retain.
+```{python}
+cumulative_variance = np.cumsum(pca_original.explained_variance_ratio_)
+n_components = np.argmax(cumulative_variance >= 0.8) + 1
+```
+
+3. Visualize the reduced-dimensional data using PCA.
+```{python}
+
+```
+
+
+**Dimensionality Reduction with t-SNE**
+Implement t-SNE on the same dataset.
+Explore different perplexity values and their impact.
+Visualize the t-SNE output to reveal patterns and clusters.
+Compare t-SNE results with PCA results.
+
+Evaluation and Comparison
+Evaluate the effectiveness of PCA and t-SNE in terms of preserving data structure and information.
+Compare the visualization capabilities of PCA and t-SNE.
+Discuss the trade-offs and scenarios where one technique may outperform the other.
+
+## Project Report:
+A comprehensive project report detailing the steps taken, results obtained, and your analysis.
+Include visualizations, comparisons, and insights gained from the dimensionality reduction techniques.

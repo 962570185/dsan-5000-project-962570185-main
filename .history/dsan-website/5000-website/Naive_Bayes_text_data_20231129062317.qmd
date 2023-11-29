@@ -1,0 +1,190 @@
+---
+title: "Untitled"
+format:
+  html:
+    embed-resources: true
+jupyter: python3
+---
+
+1.  Import libraries
+```{python}
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.feature_extraction.text import CountVectorizer
+```
+
+1. Read text file
+```{python}
+import pandas as pd
+
+file_name = '../../data/others/IMDB-Dataset.csv'
+df=pd.read_csv(file_name)  
+print(df.shape)
+```
+
+2. Preprocess the data: convert from string labels to integers
+```{python}
+import numpy as np
+ 
+labels=[]; 
+sentiment=[]
+for label in df["sentiment"]:
+    if label not in labels:
+        labels.append(label)
+        print("index =",len(labels)-1,": label =",label)
+    for i in range(0,len(labels)):
+        if(label==labels[i]):
+            sentiment.append(i)
+sentiment=np.array(sentiment)
+ 
+corpus=df["review"].to_list()
+print("number of text chunks = ",len(corpus))
+print(corpus[0:3])
+```
+
+3. Vectorize reviews
+```{python}
+from sklearn.feature_extraction.text import CountVectorizer
+
+vectorizer=CountVectorizer(min_df=0.001)   
+Xs  =  vectorizer.fit_transform(corpus)   
+X=np.array(Xs.todense())
+maxs=np.max(X,axis=0)
+X=np.ceil(X/maxs)
+print(X.shape)
+print(sentiment.shape)
+```
+
+4.Split data into train and test part
+```{python}
+from sklearn.model_selection import train_test_split
+y= sentiment
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.2,
+    random_state=100
+)
+
+print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
+```
+
+5. Naive Bayes
+```{python}
+from sklearn.naive_bayes import MultinomialNB
+
+model = MultinomialNB()
+model.fit(X_train, y_train)
+
+```
+
+```{python}
+model.score(X_train, y_train)
+```
+
+```{python}
+y_pred = model.predict(X_test)
+```
+
+7. Evaluation
+```{python}
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from sklearn.metrics import f1_score
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import ConfusionMatrixDisplay
+
+accuracy=accuracy_score(y_pred, y_test)
+f1 = f1_score(y_pred, y_test, average="weighted")
+precision = precision_score(y_test, y_pred, average="weighted")
+recall = recall_score(y_test, y_pred, average="weighted")
+
+print("Accuracy:", accuracy)
+print("Precision:", precision)
+print("Recall:", recall)
+print("F1 Score:", f1)
+
+cm=confusion_matrix(y_test, y_pred)
+disp=ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["positive","negative"])
+disp.plot()
+```
+
+```{r}
+predictions <- predict(model_NB, test_data)
+
+all_levels <- unique(c(levels(predictions), levels(test_data$Rating)))
+
+predictions <- factor(predictions, levels = all_levels)
+test_data$Rating <- factor(test_data$Rating, levels = all_levels)
+
+cm <- confusionMatrix(predictions, test_data$Rating)
+print(cm)
+
+```
+
+```{r}
+library(ggplot2)
+library(reshape2) 
+
+numeric_data <- filter_data[, sapply(filter_data, is.numeric)]
+cor_matrix <- cor(numeric_data, use = "complete.obs")
+
+melted_cormat <- melt(cor_matrix)
+ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile() +
+  scale_fill_gradient2(low="blue", high="red", mid="white", 
+                       midpoint=0, limit=c(-1,1), space="Lab", 
+                       name="Correlation") +
+  theme_minimal() + 
+  labs(title = "Correlation Heatmap") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+                                    size = 10, hjust = 1))
+
+```
+
+```{r}
+ggplot(filter_data, aes(x=Runtime, y=Rating)) +
+  geom_point(alpha=0.7) +
+  labs(title="Scatter plot of Runtime vs. Rating", x="Runtime", y="Rating")
+
+```
+
+```{r}
+
+filter_data$Year <- (filter_data$Year - min(filter_data$Year)) / (max(filter_data$Year) - min(filter_data$Year))
+
+ggplot(filter_data, aes(x=Year, y=Rating)) +
+  geom_point(alpha=0.7) +
+  labs(title="Scatter plot of Year vs. Rating", x="Year", y="Rating")
+
+```
+
+```{r}
+library(ggplot2)
+
+comparison <- as.data.frame(cbind(Actual=test_data$Rating, Predicted=predictions))
+ggplot(comparison, aes(x=Actual, y=Predicted)) + geom_point(aes(color=Actual)) + 
+  ggtitle('Actual vs Predicted') + theme_minimal()
+
+
+
+```
+
+**Discuss the concepts of overfitting and under-fitting and whether your model is doing it.**
+
+I've added as many relevant features as I can, and the model has close to 4,000 records, but the accuracy is very low, suggesting that the correlation between these features is very low. I will try to find more relevant datasets to repeat this question in subsequent assignments.
+
+**Discuss the model's performance in terms of accuracy and other relevant metrics.**
+
+The accuracy is too low causing several other metrics of my model to show NA, I will try to find a more compliant dataset in subsequent assignments
+
+**Conclusion**
+
+By analyzing the movie data using a plain Bayesian model, we obtained some interesting findings. First, the accuracy of the model may not be as high as we expect, suggesting that our data features may not fully capture all the important information that determines movie ratings. In addition, the heatmap of the confusion matrix shows that the model predicts certain ratings more accurately than others. The distribution plots of the features further reveal possible trends between specific ratings and certain features, which provides insight into the relationship between movie ratings and these features. While the performance of the model could be improved, this analysis provides us with a benchmark that could be considered in the future to further optimize model performance using more complex models or more features. Overall, this study provides an initial understanding of the relationship between movie ratings and their features and provides a solid foundation for future in-depth research.

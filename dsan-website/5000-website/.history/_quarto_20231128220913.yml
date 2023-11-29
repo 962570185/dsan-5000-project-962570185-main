@@ -1,0 +1,52 @@
+project:
+  type: website
+
+website:
+  title: "DSAN-5000: Project"
+  navbar:
+    left:
+      - href: about_me.qmd
+        text: About Me
+      - href: code
+        text: Code
+      - href: data.qmd
+        text: Data
+      - href: introduction.qmd
+        text: Introduction
+      - href: data_gathering.qmd
+        text: Data Gathering
+      - href: data_cleaning.qmd
+        text: Data Cleaning
+      - href: clustering/clustering.qmd
+        text: Clustering
+      - text: Data Exploration
+        menu:
+          - href: eda/eda.ipynb
+            text: Overview
+          # - href: eda/eda_cleaned_data_py1.qmd
+          #   text: File 1
+          # - href: eda/eda_cleaned_data_r1.qmd
+          #   text: File 2
+          # - href: eda/eda_cleaned_data_r2.qmd
+          #   text: File 3
+      - href: dimensionality_reduction.qmd
+        text: Dimensionality Reduction
+      - href: decision_trees.qmd
+        text: Decision Trees
+      - href: ARM.qmd
+        text: ARM
+      - href: conclusions.qmd
+        text: Conclusions
+      - text: Naive Bayes    
+        menu:
+          - href: Naive_Bayes_record_data.qmd
+            text: record data
+          - href: Naive_Bayes_text_data.qmd
+            text: text data
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+
+

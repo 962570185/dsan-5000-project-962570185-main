@@ -1,0 +1,36 @@
+## Project Proposal:
+Project’s objectives
+Dataset selection
+Here I select the clean data for the movie data
+
+The tools or libraries you plan to use (e.g., Python, scikit-learn).
+The code will be implemented in Python. The library pandas and numpy will be used to read and process the data. The library scikit-learn will be used to implement the model.
+
+## Code Implementation:
+
+**Read file**
+```{python}
+import pandas as pd
+
+file_name = '../../data/others/IMDB_Top_250_Movies.csv'
+df=pd.read_csv(file_name)  
+print(df.shape)
+```
+
+```{python}
+df.head()
+```
+
+```{python}
+
+```
+
+
+
+
+Python code for implementing PCA and t-SNE on the selected dataset.
+Code should include parameter tuning for t-SNE (perplexity) and visualization of the results.
+
+## Project Report:
+A comprehensive project report detailing the steps taken, results obtained, and your analysis.
+Include visualizations, comparisons, and insights gained from the dimensionality reduction techniques.

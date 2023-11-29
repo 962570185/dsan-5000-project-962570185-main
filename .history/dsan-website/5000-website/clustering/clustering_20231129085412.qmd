@@ -1,0 +1,46 @@
+---
+title: "Clustering"
+---
+
+Build out your website tab for "clustering"
+
+**Get data**
+```{python}
+import pandas as pd
+from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.feature_extraction.text import CountVectorizer
+import numpy as np
+
+file_name = '../../data/others/IMDB_Top_250_Movies_ver2.csv'
+df=pd.read_csv(file_name)  
+df = df.drop(['Unnamed: 0'], axis=1)
+print(df.shape)
+
+# genre
+mlb = MultiLabelBinarizer()
+df_genres = mlb.fit_transform(df['genre'])
+df_genres = pd.DataFrame(df_genres, columns=mlb.classes_)
+df = df.drop('genre', axis=1).join(df_genres)
+
+#casts
+df['casts'] = df['casts'].apply(lambda x: x.split(','))
+df_casts = mlb.fit_transform(df['casts'])
+df_casts = pd.DataFrame(df_casts, columns=mlb.classes_)
+df = df.drop('casts', axis=1).join(df_casts)
+
+# directors
+encoder = OneHotEncoder(sparse=False)
+ct = ColumnTransformer([("directors", encoder, ['directors'])], remainder='passthrough')
+df_encoded = ct.fit_transform(df)
+df_encoded = pd.DataFrame(df_encoded, columns=ct.get_feature_names_out())
+df = df.drop('directors', axis=1)
+df = pd.concat([df, df_encoded], axis=1)
+
+
+print(df.head())
+
+X = np.array(df)
+
+```

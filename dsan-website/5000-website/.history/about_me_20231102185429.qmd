@@ -1,0 +1,14 @@
+---
+title: "About me"
+---
+
+My name is Tao Hongzhou, my undergraduate degree is from Simon Fraser University in Canada, and my major is data science, I hope to learn more knowledge that can be applied to business promotion in this program. I hope to return to my country to work in sales after graduation. I worked as a salesman in a machinery and equipment manufacturing company during my internship, and I think that combining sales skills with data analytics will be very promising, which is why I chose to pursue my master's degree.
+
+
+Personally, I like to play some strategy games, such as the Total War series, and I like to raise fish, but the equipment for raising fish in the U.S. is too expensive, so I've been struggling with whether or not to raise fish in my apartment.
+
+
+I think data science is a very practical study, and it must be combined with what happens in life to reflect its value, and data scientists will find the optimal solution to some problems through various means.
+
+
+Artificial Intelligence is what I am interested in lately, I didn't use ChatGPT for the first time until two days ago, it's really very powerful, it's a pity that we can't use it for this project.

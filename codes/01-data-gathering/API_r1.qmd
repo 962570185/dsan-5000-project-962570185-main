@@ -1,0 +1,75 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+## 
+
+```{r}
+
+```
+
+```{r}
+library(rvest)
+library(stringr)
+
+data <- data.frame() 
+
+for (i in 0:3) {  
+  u1 <- paste("https://movie.douban.com/top250?start=", 25 * i, "&filter=", sep = "", collapse = NULL)
+  top100 <- read_html(u1)
+  title <- top100 %>% html_nodes("span.title") %>% html_text()
+
+  title <- title[is.na(str_match(title, "/"))]
+
+  score <- top100 %>% html_nodes("span.rating_num") %>% html_text()
+
+  term <- top100 %>% html_nodes("span.inq") %>% html_text()
+  
+  other <- top100 %>% html_nodes("span.other") %>% html_text() %>% str_trim() %>%
+    str_replace_all("\\/|", "") %>% str_replace_all("(\u00A0)", "")
+
+  quote <- top100 %>% html_nodes("p.quote") %>% html_text() %>% str_trim() %>%
+    str_replace_all("\\\n|", "")
+  
+  quote <- quote[1:length(title)]
+  
+  filmdf <- data.frame(title = title, score = as.numeric(score))
+  filmdf$term <- term
+  filmdf$other <- other
+  filmdf$quote <- quote
+  
+  data <- rbind(data, filmdf)
+}
+
+
+
+```
+
+```{r}
+
+write.csv(data, file = "../../data/00-raw-data/raw_data_r1.csv", row.names = FALSE)
+
+```
+
+```{r}
+raw_data <- read.csv("../../data/00-raw-data/raw_data_r1.csv")
+
+missing_values <- colSums(is.na(raw_data))
+print(missing_values)
+
+raw_data <- raw_data[complete.cases(raw_data), ]
+
+raw_data$score <- as.numeric(raw_data$score)
+
+raw_data <- unique(raw_data)
+
+head(raw_data)
+
+```
+
+```{r}
+write.csv(data, file = "../../data/01-modified-data/cleaned_data_r1.csv", row.names = FALSE)
+
+```

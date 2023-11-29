@@ -1,0 +1,34 @@
+This is link to article1:
+
+https://www.sciencedirect.com/science/article/pii/S0957417413006866
+
+Abstract:This research aims to predict movie box office outcomes using data from microblogs. Unlike prior studies that relied merely on the count of related microblogs, this study delves deeper, utilizing both count-based and content-based features from social media. Count-based features utilize user information to reduce the impact of irrelevant microblogs, while content-based features apply a new box office-oriented semantic classification to enhance relevance. Advanced machine learning models, including SVM and neural networks, are employed. The model's efficacy is tested using data from Tencent microblog to predict box offices for specific movies in China, demonstrating the predictive power of online social media.
+
+
+This is link to article2:
+
+https://www.tandfonline.com/doi/full/10.1080/13504851.2018.1441499?scroll=top&needAccess=true
+
+In this note, we contrast prediction performance of nine econometric and machine learning methods, including a new hybrid method combining model averaging and machine learning, using data from the film industry and social media. The results suggest that machine learning methods have an advantage in addressing short-run noise, whereas traditional econometric methods are better at capturing long-run trend. In addition, once sample heterogeneity is controlled, the new hybrid method tends to strike a right balance in dealing with both noise and trend, leading to superior prediction efficiency.
+
+These are my 10 questions:
+
+1. Feature Importance: Which factors (e.g., trailer views, social media buzz, director/actor popularity) have the most significant impact on the accuracy of box office predictions?
+
+2. Time Sensitivity: Which time period leading up to the movie's release (e.g., the first week, first month, first quarter) provides the most predictive value for box office results?
+
+3. Model Selection: Which machine learning or statistical model (e.g., linear regression, decision trees, neural networks) performs best for box office predictions?
+
+4. External Event Influences: How can external events (e.g., concurrent releases of other major films, significant news events, holidays) that might affect the box office be quantified and incorporated into predictions?
+
+5. Regional Variations: Are there significant differences in movie preferences among audiences from different regions (e.g., Asia, North America, Europe)? How should prediction models be adjusted to account for these differences?
+
+6. Sentiment Analysis of Social Media: How does the sentiment (positive, neutral, negative) of audience discussions on social media platforms influence box office revenues?
+
+7. Prediction Timeliness: How does the accuracy of box office predictions change over time? How does the prediction accuracy in the first week after the movie's release compare to the accuracy before the release?
+
+8. Budget vs. Revenue: What is the relationship between a movie's production budget and its box office revenue? Does a higher budget always guarantee higher box office returns?
+
+9. Historical Data Influence: How do the past box office records of a director, actor, or production company influence the predictions for their new movies?
+
+10. Influence of Specific Genres or Themes: Are certain types of movies (e.g., sci-fi, romance, adventure) easier to predict in terms of box office? Do different genres require different prediction models or features?

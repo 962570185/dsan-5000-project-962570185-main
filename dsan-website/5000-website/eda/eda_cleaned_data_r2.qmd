@@ -1,0 +1,234 @@
+---
+title: "Untitled"
+format:
+  html:
+    embed-resources: true
+---
+
+```{r}
+# data <- read.csv("../../.././data./01-modified-data./cleaned_data_r2.csv", stringsAsFactors = FALSE)
+data <- read.csv("../../../data/01-modified-data/cleaned_data_r2.csv", stringsAsFactors = FALSE)
+```
+
+```{r}
+head(data)
+summary(data)
+str(data)
+sum(is.na(data))
+table(data$some_categorical_feature)
+cor_matrix <- cor(data[, sapply(data, is.numeric)])
+print(cor_matrix)
+
+```
+
+```{r}
+mean_values <- sapply(data[, sapply(data, is.numeric)], mean, na.rm=TRUE)
+
+median_values <- sapply(data[, sapply(data, is.numeric)], median, na.rm=TRUE)
+
+get_mode <- function(v) {
+  uniqv <- unique(v)
+  uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+mode_values <- sapply(data[, sapply(data, is.numeric)], get_mode)
+
+std_dev <- sapply(data[, sapply(data, is.numeric)], sd, na.rm=TRUE)
+
+var_values <- sapply(data[, sapply(data, is.numeric)], var, na.rm=TRUE)
+
+print(list(mean = mean_values, median = median_values, mode = mode_values, sd = std_dev, variance = var_values))
+
+```
+
+```{r}
+
+split_genres <- unlist(strsplit(data$Genres, "\\|"))
+
+genre_freq <- table(split_genres)
+genre_freq
+
+library(ggplot2)
+ggplot(as.data.frame(genre_freq), aes(x = split_genres, y = Freq)) + 
+  geom_bar(stat = "identity") + 
+  theme_minimal() +
+  labs(title = "Genre Distribution", x = "Genre", y = "Frequency") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+```{r}
+filtered_data <- data[data$Runtime > 0, ]
+
+ggplot(filtered_data, aes(x=Rating)) + geom_histogram(binwidth=0.5, fill="blue", color="black") + ggtitle("Histogram of Movie Ratings")
+
+ggplot(filtered_data, aes(x=Runtime)) + geom_histogram(binwidth=10, fill="blue", color="black") + ggtitle("Histogram of Movie Runtimes")
+
+
+ggplot(data, aes(Rating)) + geom_histogram(binwidth=0.5, fill="blue", color="black") + theme_minimal()
+
+
+```
+
+```{r}
+ggplot(filtered_data, aes(y=Rating)) + geom_boxplot(fill="lightblue") + ggtitle("Boxplot of Movie Ratings")
+
+ggplot(filtered_data, aes(y=Runtime)) + geom_boxplot(fill="lightblue") + ggtitle("Boxplot of Movie Runtimes")
+
+ggplot(data, aes(x=as.factor(Year), y=Rating)) + geom_boxplot() + theme_minimal()
+
+
+
+```
+
+```{r}
+ggplot(filtered_data, aes(x=Rating, y=Runtime)) + geom_point() + ggtitle("Scatterplot of Rating vs. Runtime")
+
+```
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+
+summary_data <- data %>%
+  group_by(Year) %>%
+  summarise(Avg_Rating = mean(Rating, na.rm = TRUE))
+
+ggplot(summary_data, aes(x = Year, y = 1, fill = Avg_Rating)) +
+  geom_tile() +
+  scale_fill_gradient(low = "blue", high = "red") + 
+  labs(fill = "Average Rating") +
+  theme_minimal() +
+  ylab("") + 
+  coord_fixed(ratio = 0.2)
+
+```
+
+```{r}
+
+library(reshape2)
+
+melted_cor_matrix <- melt(cor_matrix)
+ggplot(data = melted_cor_matrix, aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile() +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+                       midpoint = 0, limit = c(-1,1), name="Correlation") +
+  theme_minimal() + 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 12, hjust = 1))
+
+```
+
+```{r}
+library(ggplot2)
+library(GGally)
+
+data <- data[data$Runtime != 0,]
+
+cor_matrix <- cor(data[,c('Year', 'Runtime', 'Rating')], use="complete.obs")
+
+ggpairs(data, columns=c('Year', 'Runtime', 'Rating'))
+
+
+```
+
+```{r}
+summary(data[c('Year', 'Runtime', 'Rating')])
+
+```
+
+5\.
+
+Hypothesis:
+
+1\. has the average length of movies changed over the past few decades?
+
+2\. do longer movies usually receive higher ratings?
+
+3\. has the average rating of movies increased over time?
+
+4\. which movie genres have the highest average ratings?
+
+```{r}
+
+data_filter <- data[data$Runtime != 0,]
+
+
+data_filter$RatingGroup <- cut(data_filter$Rating, 
+                               breaks = c(0, 6, 8, 10), 
+                               labels = c("Low", "Medium", "High"),
+                               include.lowest = TRUE, right = TRUE)
+
+grouped_data <- data_filter %>% 
+  group_by(RatingGroup) %>% 
+  summarise(Count = n(), 
+            AverageRuntime = mean(Runtime, na.rm = TRUE))
+
+
+print(grouped_data)
+
+ggplot(grouped_data, aes(x = RatingGroup, y = Count)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  labs(title = "Number of Movies by Rating Group", 
+       x = "Rating Group", 
+       y = "Number of Movies")
+
+ggplot(grouped_data, aes(x = RatingGroup, y = AverageRuntime)) +
+  geom_bar(stat = "identity", fill = "coral") +
+  labs(title = "Average Runtime by Rating Group", 
+       x = "Rating Group", 
+       y = "Average Runtime (minutes)")
+
+
+```
+
+7.Some movies show 0 hours.
+
+**ANSWER for 8**
+
+1\. Methodology and tools
+
+To perform this EDA we used R language and its libraries such as ggplot2 and dplyr. our methodology includes data summarization, data visualization, data transformation, grouping, and segmentation.
+
+2\. Key Findings
+
+Data overview
+
+The dataset consists of years of movie data, which contains fields such as title, year, summary, duration, rating, and director.
+
+Examination of movie duration
+
+For some movies, the duration was recorded as 0. This could be a result of missing data or an entry error. To ensure the accuracy of the analysis, we filtered out these movies from the dataset.
+
+Rating Conversion
+
+The rating fields in the original dataset were not in numeric format. For further analysis, we converted it to a numeric type.
+
+Rating Segmentation
+
+Based on the ratings, we segmented the movies into three groups: low (0-6), medium (6-8), and high (8-10). This segmentation allows us to better understand the characteristics of movies in different rating ranges.
+
+3\. Insights and Patterns
+
+Relationship between ratings and number of movies
+
+The results show that most of the movies are concentrated in the medium rating group. This means that most of the movies received moderate ratings, while the number of high and low rated movies is relatively small.
+
+Relationship between ratings and average duration
+
+From the data we can see that there is a slight difference in the average duration of movies in different rating groups, with movies with high ratings being relatively longer.
+
+4\. Graphical presentation
+
+We used bar charts to show the number and average duration of movies in different rating groups. This helps to visualize the characteristics of movies in different rating groups.
+
+5\. Conclusion
+
+EDA has provided us with an in-depth understanding of the movie dataset. While we found some interesting patterns, more in-depth analysis, such as considering other variables or using more sophisticated statistical methods, is needed to get a more comprehensive conclusion.
+
+**ANSWER for 9**
+
+ggplot2: This is one of the main data visualization libraries for R. It uses the concept of "syntax layers" to build graphs. This makes ggplot2 very flexible and capable of creating a wide variety of graphs. In your dataset, ggplot2 is used to show the distribution and relationships of your data.
+
+GGally: This package provides extensions to ggplot2 that enable more complex graphs to be drawn, such as diagonal matrix plots. In your analysis, you used the ggpairs function to show the relationship between different columns.
+
+base R functions: R's base functions are used for data processing, such as conditional filtering. In your dataset, you used the base functions to filter out certain specific rows (e.g., rows with a movie duration of 0).

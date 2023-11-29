@@ -1,0 +1,251 @@
+,year,rating,genre,casts,directors
+0,1994,9.3,Drama,"Tim Robbins,Morgan Freeman,Bob Gunton",Frank Darabont
+1,1972,9.2,"Crime,Drama","Marlon Brando,Al Pacino,James Caan",Francis Ford Coppola
+2,2008,9.0,"Action,Crime,Drama","Christian Bale,Heath Ledger,Aaron Eckhart",Christopher Nolan
+3,1974,9.0,"Crime,Drama","Al Pacino,Robert De Niro,Robert Duvall",Francis Ford Coppola
+4,1957,9.0,"Crime,Drama","Henry Fonda,Lee J. Cobb,Martin Balsam",Sidney Lumet
+5,1993,9.0,"Biography,Drama,History","Liam Neeson,Ralph Fiennes,Ben Kingsley",Steven Spielberg
+6,2003,9.0,"Action,Adventure,Drama","Elijah Wood,Viggo Mortensen,Ian McKellen",Peter Jackson
+7,1994,8.9,"Crime,Drama","John Travolta,Uma Thurman,Samuel L. Jackson",Quentin Tarantino
+8,2001,8.8,"Action,Adventure,Drama","Elijah Wood,Ian McKellen,Orlando Bloom",Peter Jackson
+9,1966,8.8,"Adventure,Western","Clint Eastwood,Eli Wallach,Lee Van Cleef",Sergio Leone
+10,1994,8.8,"Drama,Romance","Tom Hanks,Robin Wright,Gary Sinise",Robert Zemeckis
+11,1999,8.8,Drama,"Brad Pitt,Edward Norton,Meat Loaf",David Fincher
+12,2002,8.8,"Action,Adventure,Drama","Elijah Wood,Ian McKellen,Viggo Mortensen",Peter Jackson
+13,2010,8.8,"Action,Adventure,Sci-Fi","Leonardo DiCaprio,Joseph Gordon-Levitt,Elliot Page",Christopher Nolan
+14,1980,8.7,"Action,Adventure,Fantasy","Mark Hamill,Harrison Ford,Carrie Fisher",Irvin Kershner
+15,1999,8.7,"Action,Sci-Fi","Keanu Reeves,Laurence Fishburne,Carrie-Anne Moss","Lana Wachowski,Lilly Wachowski"
+16,1990,8.7,"Biography,Crime,Drama","Robert De Niro,Ray Liotta,Joe Pesci",Martin Scorsese
+17,1975,8.7,Drama,"Jack Nicholson,Louise Fletcher,Michael Berryman",Milos Forman
+18,1995,8.6,"Crime,Drama,Mystery","Morgan Freeman,Brad Pitt,Kevin Spacey",David Fincher
+19,1954,8.6,"Action,Drama","Toshirô Mifune,Takashi Shimura,Keiko Tsushima",Akira Kurosawa
+20,1946,8.6,"Drama,Family,Fantasy","James Stewart,Donna Reed,Lionel Barrymore",Frank Capra
+21,1991,8.6,"Crime,Drama,Thriller","Jodie Foster,Anthony Hopkins,Lawrence A. Bonney",Jonathan Demme
+22,2002,8.6,"Crime,Drama","Alexandre Rodrigues,Leandro Firmino,Matheus Nachtergaele","Fernando Meirelles,Kátia Lund(co-director)"
+23,1998,8.6,"Drama,War","Tom Hanks,Matt Damon,Tom Sizemore",Steven Spielberg
+24,2014,8.6,"Adventure,Drama,Sci-Fi","Matthew McConaughey,Anne Hathaway,Jessica Chastain",Christopher Nolan
+25,1997,8.6,"Comedy,Drama,Romance","Roberto Benigni,Nicoletta Braschi,Giorgio Cantarini",Roberto Benigni
+26,1999,8.6,"Crime,Drama,Fantasy","Tom Hanks,Michael Clarke Duncan,David Morse",Frank Darabont
+27,1977,8.6,"Action,Adventure,Fantasy","Mark Hamill,Harrison Ford,Carrie Fisher",George Lucas
+28,1991,8.6,"Action,Sci-Fi","Arnold Schwarzenegger,Linda Hamilton,Edward Furlong",James Cameron
+29,1985,8.5,"Adventure,Comedy,Sci-Fi","Michael J. Fox,Christopher Lloyd,Lea Thompson",Robert Zemeckis
+30,2001,8.6,"Animation,Adventure,Family","Daveigh Chase,Suzanne Pleshette,Miyu Irino",Hayao Miyazaki
+31,2002,8.5,"Biography,Drama,Music","Adrien Brody,Thomas Kretschmann,Frank Finlay",Roman Polanski
+32,1960,8.5,"Horror,Mystery,Thriller","Anthony Perkins,Janet Leigh,Vera Miles",Alfred Hitchcock
+33,2019,8.5,"Drama,Thriller","Song Kang-ho,Lee Sun-kyun,Cho Yeo-jeong",Bong Joon Ho
+34,1994,8.5,"Action,Crime,Drama","Jean Reno,Gary Oldman,Natalie Portman",Luc Besson
+35,1994,8.5,"Animation,Adventure,Drama","Matthew Broderick,Jeremy Irons,James Earl Jones","Roger Allers,Rob Minkoff"
+36,2000,8.5,"Action,Adventure,Drama","Russell Crowe,Joaquin Phoenix,Connie Nielsen",Ridley Scott
+37,1998,8.5,"Crime,Drama","Edward Norton,Edward Furlong,Beverly D'Angelo",Tony Kaye
+38,2006,8.5,"Crime,Drama,Thriller","Leonardo DiCaprio,Matt Damon,Jack Nicholson",Martin Scorsese
+39,1995,8.5,"Crime,Drama,Mystery","Kevin Spacey,Gabriel Byrne,Chazz Palminteri",Bryan Singer
+40,2006,8.5,"Drama,Mystery,Sci-Fi","Christian Bale,Hugh Jackman,Scarlett Johansson",Christopher Nolan
+41,2014,8.5,"Drama,Music","Miles Teller,J.K. Simmons,Melissa Benoist",Damien Chazelle
+42,1942,8.5,"Drama,Romance,War","Humphrey Bogart,Ingrid Bergman,Paul Henreid",Michael Curtiz
+43,1988,8.5,"Animation,Drama,War","Tsutomu Tatsumi,Ayano Shiraishi,Akemi Yamaguchi",Isao Takahata
+44,1962,8.6,"Action,Drama,Mystery","Tatsuya Nakadai,Akira Ishihama,Shima Iwashita",Masaki Kobayashi
+45,2011,8.5,"Biography,Comedy,Drama","François Cluzet,Omar Sy,Anne Le Ny","Olivier Nakache,Éric Toledano"
+46,1936,8.5,"Comedy,Drama,Romance","Charles Chaplin,Paulette Goddard,Henry Bergman",Charles Chaplin
+47,1968,8.5,Western,"Henry Fonda,Charles Bronson,Claudia Cardinale",Sergio Leone
+48,1954,8.5,"Mystery,Thriller","James Stewart,Grace Kelly,Wendell Corey",Alfred Hitchcock
+49,1988,8.5,"Drama,Romance","Philippe Noiret,Enzo Cannavale,Antonella Attili",Giuseppe Tornatore
+50,1979,8.5,"Horror,Sci-Fi","Sigourney Weaver,Tom Skerritt,John Hurt",Ridley Scott
+51,1931,8.5,"Comedy,Drama,Romance","Charles Chaplin,Virginia Cherrill,Florence Lee",Charles Chaplin
+52,1979,8.5,"Drama,Mystery,War","Martin Sheen,Marlon Brando,Robert Duvall",Francis Ford Coppola
+53,2000,8.4,"Mystery,Thriller","Guy Pearce,Carrie-Anne Moss,Joe Pantoliano",Christopher Nolan
+54,2012,8.4,"Drama,Western","Jamie Foxx,Christoph Waltz,Leonardo DiCaprio",Quentin Tarantino
+55,1981,8.4,"Action,Adventure","Harrison Ford,Karen Allen,Paul Freeman",Steven Spielberg
+56,2008,8.4,"Animation,Adventure,Family","Ben Burtt,Elissa Knight,Jeff Garlin",Andrew Stanton
+57,2006,8.4,"Drama,Mystery,Thriller","Ulrich Mühe,Martina Gedeck,Sebastian Koch",Florian Henckel von Donnersmarck
+58,1950,8.4,"Drama,Film-Noir","William Holden,Gloria Swanson,Erich von Stroheim",Billy Wilder
+59,1957,8.4,"Drama,War","Kirk Douglas,Ralph Meeker,Adolphe Menjou",Stanley Kubrick
+60,1980,8.4,"Drama,Horror","Jack Nicholson,Shelley Duvall,Danny Lloyd",Stanley Kubrick
+61,1940,8.4,"Comedy,Drama,War","Charles Chaplin,Paulette Goddard,Jack Oakie",Charles Chaplin
+62,2018,8.4,"Action,Adventure,Sci-Fi","Robert Downey Jr.,Chris Hemsworth,Mark Ruffalo","Anthony Russo,Joe Russo"
+63,1957,8.4,"Crime,Drama,Mystery","Tyrone Power,Marlene Dietrich,Charles Laughton",Billy Wilder
+64,1986,8.4,"Action,Adventure,Sci-Fi","Sigourney Weaver,Michael Biehn,Carrie Henn",James Cameron
+65,2018,8.4,"Animation,Action,Adventure","Shameik Moore,Jake Johnson,Hailee Steinfeld","Bob Persichetti,Peter Ramsey,Rodney Rothman"
+66,1999,8.4,Drama,"Kevin Spacey,Annette Bening,Thora Birch",Sam Mendes
+67,1964,8.4,"Comedy,War","Peter Sellers,George C. Scott,Sterling Hayden",Stanley Kubrick
+68,2012,8.4,"Action,Drama","Christian Bale,Tom Hardy,Anne Hathaway",Christopher Nolan
+69,2003,8.4,"Action,Drama,Mystery","Choi Min-sik,Yoo Ji-tae,Kang Hye-jeong",Park Chan-wook
+70,2009,8.3,"Adventure,Drama,War","Brad Pitt,Diane Kruger,Eli Roth",Quentin Tarantino
+71,1984,8.4,"Biography,Drama,Music","F. Murray Abraham,Tom Hulce,Elizabeth Berridge",Milos Forman
+72,2017,8.4,"Animation,Adventure,Comedy","Anthony Gonzalez,Gael García Bernal,Benjamin Bratt","Lee Unkrich,Adrian Molina(co-directed by)"
+73,1995,8.3,"Animation,Adventure,Comedy","Tom Hanks,Tim Allen,Don Rickles",John Lasseter
+74,2019,8.4,"Crime,Drama,Thriller","Joaquin Phoenix,Robert De Niro,Zazie Beetz",Todd Phillips
+75,1995,8.4,"Biography,Drama,History","Mel Gibson,Sophie Marceau,Patrick McGoohan",Mel Gibson
+76,1981,8.4,"Drama,War","Jürgen Prochnow,Herbert Grönemeyer,Klaus Wennemann",Wolfgang Petersen
+77,2019,8.4,"Action,Adventure,Drama","Robert Downey Jr.,Chris Evans,Mark Ruffalo","Anthony Russo,Joe Russo"
+78,1997,8.4,"Animation,Action,Adventure","Yôji Matsuda,Yuriko Ishida,Yûko Tanaka",Hayao Miyazaki
+79,1984,8.3,"Crime,Drama","Robert De Niro,James Woods,Elizabeth McGovern",Sergio Leone
+80,1997,8.3,"Drama,Romance","Robin Williams,Matt Damon,Ben Affleck",Gus Van Sant
+81,2016,8.4,"Animation,Drama,Fantasy","Ryûnosuke Kamiki,Mone Kamishiraishi,Ryô Narita",Makoto Shinkai
+82,2009,8.4,"Comedy,Drama","Aamir Khan,Madhavan,Mona Singh",Rajkumar Hirani
+83,1952,8.3,"Comedy,Musical,Romance","Gene Kelly,Donald O'Connor,Debbie Reynolds","Stanley Donen,Gene Kelly"
+84,2000,8.3,Drama,"Ellen Burstyn,Jared Leto,Jennifer Connelly",Darren Aronofsky
+85,2010,8.3,"Animation,Adventure,Comedy","Tom Hanks,Tim Allen,Joan Cusack",Lee Unkrich
+86,1963,8.4,"Crime,Drama,Mystery","Toshirô Mifune,Yutaka Sada,Tatsuya Nakadai",Akira Kurosawa
+87,2018,8.4,Drama,"Zain Al Rafeea,Yordanos Shiferaw,Boluwatife Treasure Bankole",Nadine Labaki
+88,1983,8.3,"Action,Adventure,Fantasy","Mark Hamill,Harrison Ford,Carrie Fisher",Richard Marquand
+89,2004,8.3,"Drama,Romance,Sci-Fi","Jim Carrey,Kate Winslet,Tom Wilkinson",Michel Gondry
+90,1968,8.3,"Adventure,Sci-Fi","Keir Dullea,Gary Lockwood,William Sylvester",Stanley Kubrick
+91,1992,8.3,"Crime,Thriller","Harvey Keitel,Tim Roth,Michael Madsen",Quentin Tarantino
+92,1985,8.4,"Drama,Thriller,War","Aleksey Kravchenko,Olga Mironova,Liubomiras Laucevicius",Elem Klimov
+93,2012,8.3,Drama,"Mads Mikkelsen,Thomas Bo Larsen,Annika Wedderkopp",Thomas Vinterberg
+94,1941,8.3,"Drama,Mystery","Orson Welles,Joseph Cotten,Dorothy Comingore",Orson Welles
+95,1931,8.3,"Crime,Mystery,Thriller","Peter Lorre,Ellen Widmann,Inge Landgut",Fritz Lang
+96,1962,8.3,"Adventure,Biography,Drama","Peter O'Toole,Alec Guinness,Anthony Quinn",David Lean
+97,1959,8.3,"Action,Adventure,Mystery","Cary Grant,Eva Marie Saint,James Mason",Alfred Hitchcock
+98,1958,8.3,"Mystery,Romance,Thriller","James Stewart,Kim Novak,Barbara Bel Geddes",Alfred Hitchcock
+99,1952,8.3,Drama,"Takashi Shimura,Nobuo Kaneko,Shin'ichi Himori",Akira Kurosawa
+100,2001,8.3,"Comedy,Romance","Audrey Tautou,Mathieu Kassovitz,Rufus",Jean-Pierre Jeunet
+101,1960,8.3,"Comedy,Drama,Romance","Jack Lemmon,Shirley MacLaine,Fred MacMurray",Billy Wilder
+102,1971,8.3,"Crime,Sci-Fi","Malcolm McDowell,Patrick Magee,Michael Bates",Stanley Kubrick
+103,1944,8.3,"Crime,Drama,Film-Noir","Fred MacMurray,Barbara Stanwyck,Edward G. Robinson",Billy Wilder
+104,1987,8.3,"Drama,War","Matthew Modine,R. Lee Ermey,Vincent D'Onofrio",Stanley Kubrick
+105,2022,8.3,"Action,Drama","Tom Cruise,Jennifer Connelly,Miles Teller",Joseph Kosinski
+106,1983,8.3,"Crime,Drama","Al Pacino,Michelle Pfeiffer,Steven Bauer",Brian De Palma
+107,2020,8.4,"Biography,Drama,History","Lin-Manuel Miranda,Phillipa Soo,Leslie Odom Jr.",Thomas Kail
+108,2010,8.3,"Drama,Mystery","Lubna Azabal,Mélissa Désormeaux-Poulin,Maxim Gaudette",Denis Villeneuve
+109,1962,8.3,"Crime,Drama","Gregory Peck,John Megna,Frank Overton",Robert Mulligan
+110,1995,8.3,"Action,Crime,Drama","Al Pacino,Robert De Niro,Val Kilmer",Michael Mann
+111,1973,8.3,"Comedy,Crime,Drama","Paul Newman,Robert Redford,Robert Shaw",George Roy Hill
+112,2009,8.3,"Animation,Adventure,Comedy","Edward Asner,Jordan Nagai,John Ratzenberger","Pete Docter,Bob Peterson(co-director)"
+113,2011,8.3,Drama,"Payman Maadi,Leila Hatami,Sareh Bayat",Asghar Farhadi
+114,1927,8.3,"Drama,Sci-Fi","Brigitte Helm,Alfred Abel,Gustav Fröhlich",Fritz Lang
+115,1976,8.2,"Crime,Drama","Robert De Niro,Jodie Foster,Cybill Shepherd",Martin Scorsese
+116,1997,8.2,"Crime,Drama,Mystery","Kevin Spacey,Russell Crowe,Guy Pearce",Curtis Hanson
+117,1988,8.2,"Action,Thriller","Bruce Willis,Alan Rickman,Bonnie Bedelia",John McTiernan
+118,2000,8.2,"Comedy,Crime","Jason Statham,Brad Pitt,Stephen Graham",Guy Ritchie
+119,1989,8.2,"Action,Adventure","Harrison Ford,Sean Connery,Alison Doody",Steven Spielberg
+120,1948,8.3,Drama,"Lamberto Maggiorani,Enzo Staiola,Lianella Carell",Vittorio De Sica
+121,2007,8.3,"Drama,Family","Darsheel Safary,Aamir Khan,Tisca Chopra","Aamir Khan,Amole Gupte(uncredited)"
+122,2019,8.2,"Action,Drama,War","Dean-Charles Chapman,George MacKay,Daniel Mays",Sam Mendes
+123,2004,8.2,"Biography,Drama,History","Bruno Ganz,Alexandra Maria Lara,Ulrich Matthes",Oliver Hirschbiegel
+124,2016,8.3,"Action,Biography,Drama","Aamir Khan,Sakshi Tanwar,Fatima Sana Shaikh",Nitesh Tiwari
+125,1965,8.2,Western,"Clint Eastwood,Lee Van Cleef,Gian Maria Volontè",Sergio Leone
+126,2005,8.2,"Action,Crime,Drama","Christian Bale,Michael Caine,Ken Watanabe",Christopher Nolan
+127,1921,8.3,"Comedy,Drama,Family","Charles Chaplin,Edna Purviance,Jackie Coogan",Charles Chaplin
+128,1959,8.2,"Comedy,Music,Romance","Marilyn Monroe,Tony Curtis,Jack Lemmon",Billy Wilder
+129,2020,8.2,"Drama,Mystery","Anthony Hopkins,Olivia Colman,Mark Gatiss",Florian Zeller
+130,1950,8.2,Drama,"Bette Davis,Anne Baxter,George Sanders",Joseph L. Mankiewicz
+131,2013,8.2,"Biography,Comedy,Crime","Leonardo DiCaprio,Jonah Hill,Margot Robbie",Martin Scorsese
+132,2018,8.2,"Biography,Comedy,Drama","Viggo Mortensen,Mahershala Ali,Linda Cardellini",Peter Farrelly
+133,1961,8.3,"Drama,War","Spencer Tracy,Burt Lancaster,Richard Widmark",Stanley Kramer
+134,1995,8.2,"Crime,Drama","Robert De Niro,Sharon Stone,Joe Pesci",Martin Scorsese
+135,1985,8.2,"Action,Drama,War","Tatsuya Nakadai,Akira Terao,Jinpachi Nezu",Akira Kurosawa
+136,2006,8.2,"Drama,Fantasy,War","Ivana Baquero,Ariadna Gil,Sergi López",Guillermo del Toro
+137,1998,8.2,"Comedy,Drama","Jim Carrey,Ed Harris,Laura Linney",Peter Weir
+138,2007,8.2,Drama,"Daniel Day-Lewis,Paul Dano,Ciarán Hinds",Paul Thomas Anderson
+139,1992,8.2,"Drama,Western","Clint Eastwood,Gene Hackman,Morgan Freeman",Clint Eastwood
+140,1999,8.2,"Drama,Mystery,Thriller","Bruce Willis,Haley Joel Osment,Toni Collette",M. Night Shyamalan
+141,2010,8.2,"Mystery,Thriller","Leonardo DiCaprio,Emily Mortimer,Mark Ruffalo",Martin Scorsese
+142,2001,8.2,"Biography,Drama","Russell Crowe,Ed Harris,Jennifer Connelly",Ron Howard
+143,1993,8.2,"Action,Adventure,Sci-Fi","Sam Neill,Laura Dern,Jeff Goldblum",Steven Spielberg
+144,1961,8.2,"Action,Drama,Thriller","Toshirô Mifune,Eijirô Tôno,Tatsuya Nakadai",Akira Kurosawa
+145,1948,8.2,"Adventure,Drama,Western","Humphrey Bogart,Walter Huston,Tim Holt",John Huston
+146,1975,8.2,"Adventure,Comedy,Fantasy","Graham Chapman,John Cleese,Eric Idle","Terry Gilliam,Terry Jones"
+147,1963,8.2,"Adventure,Drama,History","Steve McQueen,James Garner,Richard Attenborough",John Sturges
+148,2007,8.2,"Crime,Drama,Thriller","Tommy Lee Jones,Javier Bardem,Josh Brolin","Ethan Coen,Joel Coen"
+149,2021,8.2,"Action,Adventure,Fantasy","Tom Holland,Zendaya,Benedict Cumberbatch",Jon Watts
+150,2003,8.2,"Action,Crime,Drama","Uma Thurman,David Carradine,Daryl Hannah",Quentin Tarantino
+151,1950,8.2,"Crime,Drama,Mystery","Toshirô Mifune,Machiko Kyô,Masayuki Mori",Akira Kurosawa
+152,1982,8.2,"Horror,Mystery,Sci-Fi","Kurt Russell,Wilford Brimley,Keith David",John Carpenter
+153,2003,8.2,"Animation,Adventure,Comedy","Albert Brooks,Ellen DeGeneres,Alexander Gould","Andrew Stanton,Lee Unkrich(co-director)"
+154,1980,8.2,"Biography,Drama","Anthony Hopkins,John Hurt,Anne Bancroft",David Lynch
+155,1974,8.2,"Drama,Mystery,Thriller","Jack Nicholson,Faye Dunaway,John Huston",Roman Polanski
+156,1980,8.2,"Biography,Drama,Sport","Robert De Niro,Cathy Moriarty,Joe Pesci",Martin Scorsese
+157,2005,8.2,"Action,Drama,Sci-Fi","Hugo Weaving,Natalie Portman,Rupert Graves",James McTeigue
+158,1939,8.2,"Drama,Romance,War","Clark Gable,Vivien Leigh,Thomas Mitchell","Victor Fleming,George Cukor(uncredited),Sam Wood(uncredited)"
+159,1998,8.2,"Action,Comedy,Crime","Jason Flemyng,Dexter Fletcher,Nick Moran",Guy Ritchie
+160,2015,8.2,"Animation,Adventure,Comedy","Amy Poehler,Bill Hader,Lewis Black","Pete Docter,Ronnie Del Carmen(co-director)"
+161,1954,8.2,"Crime,Thriller","Ray Milland,Grace Kelly,Robert Cummings",Alfred Hitchcock
+162,2009,8.2,"Drama,Mystery,Romance","Ricardo Darín,Soledad Villamil,Pablo Rago",Juan José Campanella
+163,2004,8.2,"Animation,Adventure,Family","Chieko Baisho,Takuya Kimura,Tatsuya Gashûin",Hayao Miyazaki
+164,2017,8.1,"Comedy,Crime,Drama","Frances McDormand,Woody Harrelson,Sam Rockwell",Martin McDonagh
+165,1957,8.2,"Adventure,Drama,War","William Holden,Alec Guinness,Jack Hawkins",David Lean
+166,1996,8.1,Drama,"Ewan McGregor,Ewen Bremner,Jonny Lee Miller",Danny Boyle
+167,2013,8.1,"Crime,Drama,Mystery","Hugh Jackman,Jake Gyllenhaal,Viola Davis",Denis Villeneuve
+168,2011,8.2,"Action,Drama,Sport","Tom Hardy,Nick Nolte,Joel Edgerton",Gavin O'Connor
+169,1996,8.1,"Crime,Thriller","William H. Macy,Frances McDormand,Steve Buscemi","Joel Coen,Ethan Coen(uncredited)"
+170,2008,8.1,Drama,"Clint Eastwood,Bee Vang,Christopher Carley",Clint Eastwood
+171,1988,8.1,"Animation,Comedy,Family","Hitoshi Takagi,Noriko Hidaka,Chika Sakamoto",Hayao Miyazaki
+172,2002,8.1,"Biography,Crime,Drama","Leonardo DiCaprio,Tom Hanks,Christopher Walken",Steven Spielberg
+173,2004,8.1,"Drama,Sport","Hilary Swank,Clint Eastwood,Morgan Freeman",Clint Eastwood
+174,1997,8.2,"Drama,Family,Sport","Mohammad Amir Naji,Amir Farrokh Hashemian,Bahare Seddiqi",Majid Majidi
+175,1982,8.1,"Action,Drama,Sci-Fi","Harrison Ford,Rutger Hauer,Sean Young",Ridley Scott
+176,1925,8.1,"Adventure,Comedy,Drama","Charles Chaplin,Mack Swain,Tom Murray",Charles Chaplin
+177,1995,8.1,"Drama,Romance","Ethan Hawke,Julie Delpy,Andrea Eckert",Richard Linklater
+178,2013,8.1,"Biography,Drama,History","Chiwetel Ejiofor,Michael Kenneth Williams,Michael Fassbender",Steve McQueen
+179,2019,8.2,"Animation,Adventure,Comedy","Jason Schwartzman,J.K. Simmons,Rashida Jones","Sergio Pablos,Carlos Martínez López(co-director)"
+180,2011,8.1,"Adventure,Family,Fantasy","Daniel Radcliffe,Emma Watson,Rupert Grint",David Yates
+181,1954,8.1,"Crime,Drama,Thriller","Marlon Brando,Karl Malden,Lee J. Cobb",Elia Kazan
+182,1959,8.1,"Adventure,Drama","Charlton Heston,Jack Hawkins,Stephen Boyd",William Wyler
+183,2014,8.1,"Drama,Mystery,Thriller","Ben Affleck,Rosamund Pike,Neil Patrick Harris",David Fincher
+184,2014,8.1,"Adventure,Comedy,Crime","Ralph Fiennes,F. Murray Abraham,Mathieu Amalric",Wes Anderson
+185,1957,8.1,"Drama,Romance","Victor Sjöström,Bibi Andersson,Ingrid Thulin",Ingmar Bergman
+186,1926,8.1,"Action,Adventure,Comedy","Buster Keaton,Marion Mack,Glen Cavender","Clyde Bruckman,Buster Keaton"
+187,1949,8.1,"Film-Noir,Mystery,Thriller","Orson Welles,Joseph Cotten,Alida Valli",Carol Reed
+188,1993,8.1,"Biography,Crime,Drama","Daniel Day-Lewis,Pete Postlethwaite,Alison Crosbie",Jim Sheridan
+189,1978,8.1,"Drama,War","Robert De Niro,Christopher Walken,John Cazale",Michael Cimino
+190,1975,8.1,"Adventure,Drama,War","Ryan O'Neal,Marisa Berenson,Patrick Magee",Stanley Kubrick
+191,2016,8.1,"Biography,Drama,History","Andrew Garfield,Sam Worthington,Luke Bracey",Mel Gibson
+192,1953,8.2,"Adventure,Drama,Thriller","Yves Montand,Charles Vanel,Peter van Eyck",Henri-Georges Clouzot
+193,2003,8.1,"Crime,Drama,Mystery","Song Kang-ho,Kim Sang-kyung,Roe-ha Kim",Bong Joon Ho
+194,1924,8.2,"Action,Comedy,Romance","Buster Keaton,Kathryn McGuire,Joe Keaton",Buster Keaton
+195,2014,8.1,"Comedy,Drama,Thriller","Darío Grandinetti,María Marull,Mónica Villa",Damián Szifron
+196,1939,8.1,"Comedy,Drama","James Stewart,Jean Arthur,Claude Rains",Frank Capra
+197,2015,8.1,"Action,Adventure,Sci-Fi","Tom Hardy,Charlize Theron,Nicholas Hoult",George Miller
+198,1957,8.1,"Drama,Fantasy","Max von Sydow,Gunnar Björnstrand,Bengt Ekerot",Ingmar Bergman
+199,2009,8.1,"Animation,Comedy,Drama","Toni Collette,Philip Seymour Hoffman,Eric Bana",Adam Elliot
+200,2010,8.1,"Animation,Action,Adventure","Jay Baruchel,Gerard Butler,Christopher Mintz-Plasse","Dean DeBlois,Chris Sanders"
+201,2015,8.1,"Drama,Thriller","Brie Larson,Jacob Tremblay,Sean Bridgers",Lenny Abrahamson
+202,2001,8.1,"Animation,Adventure,Comedy","Billy Crystal,John Goodman,Mary Gibbs","Pete Docter,David Silverman(co-director),Lee Unkrich(co-director)"
+203,1975,8.1,"Adventure,Thriller","Roy Scheider,Robert Shaw,Richard Dreyfuss",Steven Spielberg
+204,1989,8.1,"Comedy,Drama","Robin Williams,Robert Sean Leonard,Ethan Hawke",Peter Weir
+205,1998,8.1,"Comedy,Crime","Jeff Bridges,John Goodman,Julianne Moore","Joel Coen,Ethan Coen(uncredited)"
+206,1953,8.2,Drama,"Chishû Ryû,Chieko Higashiyama,Sô Yamamura",Yasujirô Ozu
+207,1928,8.2,"Biography,Drama,History","Maria Falconetti,Eugene Silvain,André Berley",Carl Theodor Dreyer
+208,2004,8.1,"Biography,Drama,History","Don Cheadle,Sophie Okonedo,Joaquin Phoenix",Terry George
+209,2019,8.1,"Action,Biography,Drama","Matt Damon,Christian Bale,Jon Bernthal",James Mangold
+210,1976,8.1,"Drama,Sport","Sylvester Stallone,Talia Shire,Burt Young",John G. Avildsen
+211,1986,8.1,"Drama,War","Charlie Sheen,Tom Berenger,Willem Dafoe",Oliver Stone
+212,2007,8.1,"Animation,Adventure,Comedy","Brad Garrett,Lou Romano,Patton Oswalt","Brad Bird,Jan Pinkava(co-director)"
+213,2015,8.1,"Biography,Crime,Drama","Mark Ruffalo,Michael Keaton,Rachel McAdams",Tom McCarthy
+214,1984,8.1,"Action,Sci-Fi","Arnold Schwarzenegger,Linda Hamilton,Michael Biehn",James Cameron
+215,2017,8.1,"Action,Drama,Sci-Fi","Hugh Jackman,Patrick Stewart,Dafne Keen",James Mangold
+216,1986,8.1,"Adventure,Drama","Wil Wheaton,River Phoenix,Corey Feldman",Rob Reiner
+217,2013,8.1,"Action,Biography,Drama","Daniel Brühl,Chris Hemsworth,Olivia Wilde",Ron Howard
+218,1976,8.1,Drama,"Faye Dunaway,William Holden,Peter Finch",Sidney Lumet
+219,2007,8.1,"Adventure,Biography,Drama","Emile Hirsch,Vince Vaughn,Catherine Keener",Sean Penn
+220,2004,8.1,"Drama,Romance","Ethan Hawke,Julie Delpy,Vernon Dobtcheff",Richard Linklater
+221,1939,8.1,"Adventure,Family,Fantasy","Judy Garland,Frank Morgan,Ray Bolger","Victor Fleming,George Cukor(uncredited),Mervyn LeRoy(uncredited)"
+222,1955,8.3,Drama,"Kanu Bannerjee,Karuna Bannerjee,Subir Banerjee",Satyajit Ray
+223,1993,8.1,"Comedy,Drama,Fantasy","Bill Murray,Andie MacDowell,Chris Elliott",Harold Ramis
+224,1946,8.1,"Drama,Romance,War","Myrna Loy,Dana Andrews,Fredric March",William Wyler
+225,1973,8.1,Horror,"Ellen Burstyn,Max von Sydow,Linda Blair",William Friedkin
+226,2004,8.0,"Animation,Action,Adventure","Craig T. Nelson,Samuel L. Jackson,Holly Hunter",Brad Bird
+227,1942,8.2,"Comedy,Romance,War","Carole Lombard,Jack Benny,Robert Stack",Ernst Lubitsch
+228,1995,8.1,"Crime,Drama","Vincent Cassel,Hubert Koundé,Saïd Taghmaoui",Mathieu Kassovitz
+229,1966,8.1,"Drama,War","Brahim Hadjadj,Jean Martin,Yacef Saadi",Gillo Pontecorvo
+230,2003,8.1,"Action,Adventure,Fantasy","Johnny Depp,Geoffrey Rush,Orlando Bloom",Gore Verbinski
+231,2009,8.1,"Biography,Drama,Family","Richard Gere,Joan Allen,Cary-Hiroyuki Tagawa",Lasse Hallström
+232,1940,8.1,Drama,"Henry Fonda,Jane Darwell,John Carradine",John Ford
+233,2021,8.8,"Crime,Drama,Mystery","Suriya,Lijo Mol Jose,Manikandan K.",T.J. Gnanavel
+234,2005,8.2,"Drama,Family","Çetin Tekindor,Fikret Kuskan,Hümeyra",Çagan Irmak
+235,2000,8.1,"Drama,Thriller","Emilio Echevarría,Gael García Bernal,Goya Toledo",Alejandro G. Iñárritu
+236,1940,8.1,"Drama,Film-Noir,Mystery","Laurence Olivier,Joan Fontaine,George Sanders",Alfred Hitchcock
+237,1967,8.1,"Crime,Drama","Paul Newman,George Kennedy,Strother Martin",Stuart Rosenberg
+238,2016,8.1,"Drama,Romance,Thriller","Kim Min-hee,Ha Jung-woo,Cho Jin-woong",Park Chan-wook
+239,1959,8.1,"Crime,Drama","Jean-Pierre Léaud,Albert Rémy,Claire Maurier",François Truffaut
+240,1965,8.1,"Biography,Drama,Family","Julie Andrews,Christopher Plummer,Eleanor Parker",Robert Wise
+241,1934,8.1,"Comedy,Romance","Clark Gable,Claudette Colbert,Walter Connolly",Frank Capra
+242,1966,8.1,"Drama,Thriller","Bibi Andersson,Liv Ullmann,Margaretha Krook",Ingmar Bergman
+243,1979,8.0,Comedy,"Graham Chapman,John Cleese,Michael Palin",Terry Jones
+244,1999,8.1,"Animation,Action,Adventure","Eli Marienthal,Harry Connick Jr.,Jennifer Aniston",Brad Bird
+245,2011,8.1,Drama,"Viola Davis,Emma Stone,Octavia Spencer",Tate Taylor
+246,1975,8.2,"Adventure,Biography,Drama","Maksim Munzuk,Yuriy Solomin,Mikhail Bychkov",Akira Kurosawa
+247,1992,8.0,"Animation,Adventure,Comedy","Scott Weinger,Robin Williams,Linda Larkin","Ron Clements,John Musker"
+248,1982,8.0,"Biography,Drama,History","Ben Kingsley,John Gielgud,Rohini Hattangadi",Richard Attenborough
+249,1990,8.0,"Adventure,Drama,Western","Kevin Costner,Mary McDonnell,Graham Greene",Kevin Costner

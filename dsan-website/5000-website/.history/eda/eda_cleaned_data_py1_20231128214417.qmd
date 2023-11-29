@@ -1,0 +1,321 @@
+---
+title: "Untitled"
+format:
+  html:
+    embed-resources: true
+---
+
+```{r}
+```
+
+```{r}
+data <- read.csv("../../.././data./01-modified-data./cleaned_data_py1.csv")
+```
+
+```{r}
+head(data)
+```
+
+```{r}
+summary(data)
+```
+
+```{r}
+str(data)
+
+```
+
+```{r}
+colSums(is.na(data))
+
+```
+
+```{r}
+cor(data[, sapply(data, is.numeric)])
+
+```
+
+```{r}
+
+means <- sapply(data[, sapply(data, is.numeric)], mean, na.rm=TRUE)
+
+medians <- sapply(data[, sapply(data, is.numeric)], median, na.rm=TRUE)
+
+std_devs <- sapply(data[, sapply(data, is.numeric)], sd, na.rm=TRUE)
+
+variances <- sapply(data[, sapply(data, is.numeric)], var, na.rm=TRUE)
+
+print(list(Means = means, Medians = medians, Standard_Deviations = std_devs, Variances = variances))
+
+```
+
+```{r}
+categorical_vars <- data[, sapply(data, is.factor)]
+
+freq_distributions <- lapply(categorical_vars, function(x) {
+  tbl <- table(x)
+  prop <- prop.table(tbl)
+  data.frame(Category = names(tbl), Frequency = as.numeric(tbl), Proportion = prop)
+})
+
+print(freq_distributions)
+
+```
+
+```{r}
+library(ggplot2)
+
+lapply(names(categorical_vars), function(var_name) {
+  ggplot(data, aes_string(x = var_name)) + 
+    geom_bar() +
+    labs(title = paste("Bar chart of", var_name), y = "Frequency") +
+    theme_minimal()
+})
+
+```
+
+```{r}
+# Histogram for popularity
+ggplot(data, aes(x=popularity)) + 
+  geom_histogram(binwidth=10, fill="blue", color="black", alpha=0.7) + 
+  labs(title="Histogram of Popularity", x="Value", y="Frequency")
+
+# Histogram for vote_average
+ggplot(data, aes(x=vote_average)) + 
+  geom_histogram(binwidth=0.5, fill="blue", color="black", alpha=0.7) + 
+  labs(title="Histogram of Vote Average", x="Value", y="Frequency")
+
+# Histogram for vote_count
+ggplot(data, aes(x=vote_count)) + 
+  geom_histogram(binwidth=50, fill="blue", color="black", alpha=0.7) + 
+  labs(title="Histogram of Vote Count", x="Value", y="Frequency")
+
+
+```
+
+```{r}
+# Boxplot for popularity
+ggplot(data, aes(y=popularity)) + 
+  geom_boxplot(fill="blue", color="black", alpha=0.7) + 
+  labs(title="Boxplot of Popularity", y="Value")
+
+# Boxplot for vote_average
+ggplot(data, aes(y=vote_average)) + 
+  geom_boxplot(fill="blue", color="black", alpha=0.7) + 
+  labs(title="Boxplot of Vote Average", y="Value")
+
+# Boxplot for vote_count
+ggplot(data, aes(y=vote_count)) + 
+  geom_boxplot(fill="blue", color="black", alpha=0.7) + 
+  labs(title="Boxplot of Vote Count", y="Value")
+
+```
+
+```{r}
+# Scatter plot of popularity vs vote_average
+ggplot(data, aes(x=popularity, y=vote_average)) + 
+  geom_point(alpha=0.7) + 
+  labs(title="Scatter plot of Popularity vs Vote Average", x="Popularity", y="Vote Average")
+
+# Scatter plot of popularity vs vote_count
+ggplot(data, aes(x=popularity, y=vote_count)) + 
+  geom_point(alpha=0.7) + 
+  labs(title="Scatter plot of Popularity vs Vote Count", x="Popularity", y="Vote Count")
+
+# Scatter plot of vote_average vs vote_count
+ggplot(data, aes(x=vote_average, y=vote_count)) + 
+  geom_point(alpha=0.7) + 
+  labs(title="Scatter plot of Vote Average vs Vote Count", x="Vote Average", y="Vote Count")
+
+```
+
+```{r}
+cor_matrix <- cor(data[,c("popularity", "vote_average", "vote_count")], use="complete.obs")
+library(reshape2)
+cor_melted <- melt(cor_matrix)
+
+ggplot(cor_melted, aes(x=Var1, y=Var2)) + 
+  geom_tile(aes(fill=value), color="white") + 
+  scale_fill_gradient2(low="blue", high="red", mid="white", midpoint=0, limit=c(-1,1)) + 
+  geom_text(aes(label=round(value, 2)), vjust=1) + 
+  labs(title="Heatmap of correlation matrix") + 
+  theme_minimal() + 
+  theme(axis.text.x=element_text(angle=45, vjust=1, hjust=1))
+
+```
+
+```{r}
+cor_matrix <- cor(data[,c("popularity", "vote_average", "vote_count")], use="complete.obs")
+print(cor_matrix)
+
+```
+
+Hypothesis Generation.
+
+1\. Movie popularity is positively related to the number of votes cast: It is hypothesized that popular movies may receive more votes because more viewers may have seen and rated them.
+
+2\. Average vote score is positively related to the number of votes: High quality movies may attract more viewers and thus get more votes. However, it is also possible that even if a movie receives many votes, its average score is not necessarily high.
+
+3\. Recently released movies may have higher popularity: Recently released movies may have high popularity because they are likely to be hot topics of interest to the audience.
+
+4\. The length of the synopsis is not significantly related to popularity: The synopsis of a movie may not have a direct effect on the popularity of the movie, however, if the synopsis is able to attract the audience, then it may have an indirect effect on the popularity of the movie.
+
+Research Question.
+
+1\. which genre of movie is the most popular? By looking at other variables in the dataset, such as movie genre or director, we can further explore which genre of movie is most popular with audiences.
+
+2\. does popularity change over time? Are there certain years or seasons where movies released during those periods are more popular?
+
+3\. what are the common characteristics of highly rated movies? Is it the director, the actors, the genre or other factors?
+
+4\. is the length of a movie's synopsis related to its popularity? Do longer synopses attract more viewers than shorter ones?
+
+```{r}
+data$rating_group <- cut(data$vote_average, breaks = c(0, 5, 7, 10), labels = c("Low", "Medium", "High"))
+
+```
+
+```{r}
+data$release_year <- as.numeric(format(as.Date(data$release_date, format="%Y-%m-%d"), "%Y"))
+data$release_month <- as.numeric(format(as.Date(data$release_date, format="%Y-%m-%d"), "%m"))
+
+```
+
+```{r}
+data$popularity_group <- cut(data$popularity, breaks = quantile(data$popularity, c(0, .33, .66, 1)), labels = c("Low", "Medium", "High"))
+
+```
+
+```{r}
+data$vote_count_group <- cut(data$vote_count, breaks = quantile(data$vote_count, c(0, .33, .66, 1)), labels = c("Low", "Medium", "High"))
+
+```
+
+```{r}
+library(dplyr)
+
+data %>% 
+  group_by(rating_group) %>% 
+  summarise(
+    avg_popularity = mean(popularity, na.rm = TRUE),
+    median_vote_count = median(vote_count, na.rm = TRUE),
+    count = n()
+  )
+
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(data, aes(x = rating_group, y = popularity)) +
+  geom_boxplot() +
+  ggtitle("Popularity by Rating Group")
+
+```
+
+```{r}
+library(stats)
+result <- aov(popularity ~ rating_group, data = data)
+summary(result)
+
+```
+
+```{r}
+table(data$rating_group, data$popularity_group)
+
+```
+
+```{r}
+ggplot(data, aes(x = release_year, y = popularity, color = rating_group)) +
+  geom_line() +
+  ggtitle("Popularity Trend by Rating Group over Years")
+
+```
+
+```{r}
+Q1 <- quantile(data$popularity, 0.25)
+Q3 <- quantile(data$popularity, 0.75)
+IQR <- Q3 - Q1
+
+lower_bound <- Q1 - 1.5 * IQR
+upper_bound <- Q3 + 1.5 * IQR
+
+outliers_popularity <- data$popularity[data$popularity < lower_bound | data$popularity > upper_bound]
+outliers_popularity
+```
+
+```{r}
+Q1_vote_avg <- quantile(data$vote_average, 0.25)
+Q3_vote_avg <- quantile(data$vote_average, 0.75)
+IQR_vote_avg <- Q3_vote_avg - Q1_vote_avg
+
+lower_bound_vote_avg <- Q1_vote_avg - 1.5 * IQR_vote_avg
+upper_bound_vote_avg <- Q3_vote_avg + 1.5 * IQR_vote_avg
+
+outliers_vote_avg <- data$vote_average[data$vote_average < lower_bound_vote_avg | data$vote_average > upper_bound_vote_avg]
+outliers_vote_avg
+```
+
+```{r}
+Q1_vote_count <- quantile(data$vote_count, 0.25)
+Q3_vote_count <- quantile(data$vote_count, 0.75)
+IQR_vote_count <- Q3_vote_count - Q1_vote_count
+
+lower_bound_vote_count <- Q1_vote_count - 1.5 * IQR_vote_count
+upper_bound_vote_count <- Q3_vote_count + 1.5 * IQR_vote_count
+
+outliers_vote_count <- data$vote_count[data$vote_count < lower_bound_vote_count | data$vote_count > upper_bound_vote_count]
+outliers_vote_count
+```
+
+**Answer for 8**
+
+1\. Overview of methods.
+
+In performing Exploratory Data Analysis (EDA), we use a range of techniques and methods to gain insight into the data set. Initial steps include data understanding, descriptive statistics, data visualization, correlation analysis, hypothesis generation, data grouping and segmentation, and outlier detection.
+
+2\. Key Findings.
+
+Descriptive Statistics: We began by analyzing the core features of the dataset with descriptive statistics. This includes statistical information such as mean, median, and standard deviation for numeric variables such as popularity, vote_average, and vote_count. In addition, frequency distributions were conducted for categorical variables.
+
+Data Visualization: Through histograms, box plots, and scatter plots, we conducted in-depth explorations of the distributions and relationships between features in the dataset. For example, the distribution of popularity shows that most of the movies in the dataset are moderately popular, but a few are very popular.
+
+CORRELATION ANALYSIS: We used correlation matrix and heatmap to check the relationship between the variables. From the results, we observed a significant positive correlation between popularity and vote_count, implying that movies with more ratings are usually more popular as well.
+
+Outlier Detection: Through the IQR method, we identified outliers in vote_average and several other variables. These outliers may indicate data quality issues or interesting anomalies in the dataset.
+
+3\. Charts and tables.
+
+We utilized a variety of charts and table formats to more visually display data distributions, trends, and relationships between features. For example, a scatterplot shows the trend of increasing popularity with increasing vote_count.
+
+4 Conclusions and insights.
+
+Summarizing the above analysis, we can draw the following conclusions and insights:
+
+There is a strong relationship between the popularity of a movie and the number of votes it receives.
+
+There are some outliers in the dataset, which may be due to data entry errors, or a true reflection of some specific situations.
+
+By grouping and segmenting the data, we can gain more insight into trends and patterns within specific subgroups.
+
+For further data analysis or modeling, we recommend more in-depth feature engineering, as well as considering the use of more advanced statistical models or machine learning techniques. In addition, based on our findings, producers or distributors could consider different promotional strategies to more effectively increase the visibility and popularity of their movies.
+
+**Answer for 9**
+
+Tools and Software.
+
+During Exploratory Data Analysis (EDA), choosing the right tools and software is critical as they help us to effectively process data, create visualizations, and draw meaningful conclusions. Below are the main tools and software we used for this project:
+
+R: This EDA was mainly analyzed using R. R is an open source programming language and software environment developed for statistical computing and graphical design. Thanks to its powerful statistical functions and plotting libraries, R is widely popular in the field of data analysis.
+
+ggplot2: This is an R-based data visualization package that provides an efficient way to create complex statistical graphs. In this project, we used ggplot2 to create histograms, box plots, scatter plots, and other graphs to explore the characteristics of the dataset.
+
+Other R libraries: In addition to ggplot2, we used several other R libraries to help with EDA. e.g., the dplyr library for data manipulation and transformations, the tidyr library for data collation, and the correlation analysis using the corrplot library.
+
+The choice of R and its associated libraries as the primary EDA tool was based on the following considerations:
+
+Flexibility: R offers a wide range of statistical and data analysis capabilities to meet a variety of complex analysis needs.
+
+Community Support: R has a very active community where users can find a large number of online tutorials, guides and answers to questions.
+
+Extensibility: R has thousands of available packages that can be used for a variety of statistical, machine learning, and data visualization tasks.

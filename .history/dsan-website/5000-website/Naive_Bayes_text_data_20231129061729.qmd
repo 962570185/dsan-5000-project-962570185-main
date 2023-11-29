@@ -1,0 +1,223 @@
+---
+title: "Untitled"
+format:
+  html:
+    embed-resources: true
+jupyter: python3
+---
+
+1.  Import libraries
+```{python}
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.feature_extraction.text import CountVectorizer
+```
+
+2. Read File
+```{python}
+file_name = '../../data/others/IMDB-Dataset.csv'
+df=pd.read_csv(file_name)  
+print(df.shape)
+```
+
+3. Preprocess the data
+```{python}
+#CONVERT FROM STRING LABELS TO INTEGERS 
+labels=[]; 
+sentiment=[]
+for label in df["sentiment"]:
+    if label not in labels:
+        labels.append(label)
+        print("index =",len(labels)-1,": label =",label)
+    for i in range(0,len(labels)):
+        if(label==labels[i]):
+            sentiment.append(i)
+sentiment=np.array(sentiment)
+ 
+corpus=df["review"].to_list()
+print("number of text chunks = ",len(corpus))
+print(corpus[0:3])
+```
+
+4. Vectorize
+```{python}
+vectorizer=CountVectorizer(min_df=0.001)   
+Xs  =  vectorizer.fit_transform(corpus)   
+X=np.array(Xs.todense())
+maxs=np.max(X,axis=0)
+X=np.ceil(X/maxs)
+print(X.shape)
+print(sentiment.shape)
+```
+
+5.split data into train and test
+```{python}
+from sklearn.model_selection import train_test_split
+y= sentiment
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.2,
+    random_state=100
+)
+
+print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
+```
+
+6. 
+```{python}
+from sklearn.naive_bayes import MultinomialNB
+
+model = MultinomialNB()
+model.fit(X_train, y_train)
+
+```
+
+```{python}
+model.score(X_train, y_train)
+```
+
+```{python}
+pred = model.predict(x_test)
+```
+
+
+```{r}
+# data <- read.csv("../.././data./01-modified-data./cleaned_data_r2.csv", stringsAsFactors = FALSE)
+data <- read.csv("../../data/others/IMDB-Dataset.csv", stringsAsFactors = FALSE)
+
+
+filter_data <- data[, c("Year", "Runtime", "Rating", "Genres", "Director", "Writers", "Cast")]
+
+
+filter_data$Genres <- sub("\\|.*", "", filter_data$Genres)
+filter_data$Cast <- sub("\\|.*", "", filter_data$Cast)
+
+
+filter_data <- filter_data[filter_data$Runtime != 0, ]
+str(filter_data)
+
+```
+
+```{r}
+library(caret)
+set.seed(42)
+
+initialSplit <- createDataPartition(filter_data$Rating, p = 0.8, list = FALSE)
+trainValid_data <- filter_data[initialSplit, ]
+test_data <- filter_data[-initialSplit, ]
+
+trainIndex <- createDataPartition(trainValid_data$Rating, p = 0.75, list = FALSE)
+train_data <- trainValid_data[trainIndex, ]
+valid_data <- trainValid_data[-trainIndex, ]
+
+```
+
+**Explain how and why is it necessary to split a dataset into training and test sets.**
+
+Datasets are often split into training and test sets for machine learning and statistical modeling needs. Here are the reasons why:
+
+Avoiding Overfitting: By testing the model on separate datasets, we can avoid overfitting the model to the training data (also known as overfitting). If the model performs well on the training set but not on the test set, this usually means that the model is overfitting.
+
+Evaluating Performance: The test set provides us with a tool to evaluate the performance of the model on new, unseen data. This provides us with an objective measure of the model's ability to generalize.
+
+Model Selection: By comparing the performance of different models or parameter settings on the test set, we can select the best model or parameter combination.
+
+```{r}
+library(e1071)
+library(caret)
+
+model_NB <- naiveBayes(Rating ~ ., data=train_data)
+
+
+```
+
+```{r}
+predictions <- predict(model_NB, test_data)
+
+all_levels <- unique(c(levels(predictions), levels(test_data$Rating)))
+
+predictions <- factor(predictions, levels = all_levels)
+test_data$Rating <- factor(test_data$Rating, levels = all_levels)
+
+cm <- confusionMatrix(predictions, test_data$Rating)
+print(cm)
+
+```
+
+```{r}
+accuracy <- cm$overall['Accuracy']
+precision <- cm$byClass['Precision']
+recall <- cm$byClass['Recall']
+F1 <- 2 * (precision * recall) / (precision + recall)
+accuracy
+precision
+recall
+F1
+```
+
+```{r}
+library(ggplot2)
+library(reshape2) 
+
+numeric_data <- filter_data[, sapply(filter_data, is.numeric)]
+cor_matrix <- cor(numeric_data, use = "complete.obs")
+
+melted_cormat <- melt(cor_matrix)
+ggplot(data = melted_cormat, aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile() +
+  scale_fill_gradient2(low="blue", high="red", mid="white", 
+                       midpoint=0, limit=c(-1,1), space="Lab", 
+                       name="Correlation") +
+  theme_minimal() + 
+  labs(title = "Correlation Heatmap") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+                                    size = 10, hjust = 1))
+
+```
+
+```{r}
+ggplot(filter_data, aes(x=Runtime, y=Rating)) +
+  geom_point(alpha=0.7) +
+  labs(title="Scatter plot of Runtime vs. Rating", x="Runtime", y="Rating")
+
+```
+
+```{r}
+
+filter_data$Year <- (filter_data$Year - min(filter_data$Year)) / (max(filter_data$Year) - min(filter_data$Year))
+
+ggplot(filter_data, aes(x=Year, y=Rating)) +
+  geom_point(alpha=0.7) +
+  labs(title="Scatter plot of Year vs. Rating", x="Year", y="Rating")
+
+```
+
+```{r}
+library(ggplot2)
+
+comparison <- as.data.frame(cbind(Actual=test_data$Rating, Predicted=predictions))
+ggplot(comparison, aes(x=Actual, y=Predicted)) + geom_point(aes(color=Actual)) + 
+  ggtitle('Actual vs Predicted') + theme_minimal()
+
+
+
+```
+
+**Discuss the concepts of overfitting and under-fitting and whether your model is doing it.**
+
+I've added as many relevant features as I can, and the model has close to 4,000 records, but the accuracy is very low, suggesting that the correlation between these features is very low. I will try to find more relevant datasets to repeat this question in subsequent assignments.
+
+**Discuss the model's performance in terms of accuracy and other relevant metrics.**
+
+The accuracy is too low causing several other metrics of my model to show NA, I will try to find a more compliant dataset in subsequent assignments
+
+**Conclusion**
+
+By analyzing the movie data using a plain Bayesian model, we obtained some interesting findings. First, the accuracy of the model may not be as high as we expect, suggesting that our data features may not fully capture all the important information that determines movie ratings. In addition, the heatmap of the confusion matrix shows that the model predicts certain ratings more accurately than others. The distribution plots of the features further reveal possible trends between specific ratings and certain features, which provides insight into the relationship between movie ratings and these features. While the performance of the model could be improved, this analysis provides us with a benchmark that could be considered in the future to further optimize model performance using more complex models or more features. Overall, this study provides an initial understanding of the relationship between movie ratings and their features and provides a solid foundation for future in-depth research.
